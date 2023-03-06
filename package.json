@@ -39,6 +39,7 @@
     "@typescript-eslint/eslint-plugin": "5.54.0",
     "@typescript-eslint/parser": "5.54.0",
     "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
     "eslint": "8.35.0",
     "eslint-plugin-qwik": "0.20.1",
     "memfs": "^3.4.13",
@@ -56,12 +57,10 @@
     "util": "^0.12.5",
     "vite": "4.1.4",
     "vite-tsconfig-paths": "3.5.0",
-    "wrangler": "latest"
-  },
-  "dependencies": {
-    "@safe-global/auth-kit": "^0.1.0-alpha.2",
-    "@web3auth/base": "^4.6.0",
-    "@web3auth/modal": "^4.6.2",
-    "@web3auth/openlogin-adapter": "^4.6.0"
+    "wrangler": "latest",
+      "@safe-global/auth-kit": "^0.1.0-alpha.2",
+      "@web3auth/base": "^4.6.0",
+      "@web3auth/modal": "^4.6.2",
+      "@web3auth/openlogin-adapter": "^4.6.0"
   }
 }

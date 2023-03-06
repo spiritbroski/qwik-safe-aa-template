@@ -3,7 +3,7 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 import { MUIButton  } from '~/integrations/react/mui';
 import { SafeAuthKit, SafeAuthProviderType } from '@safe-global/auth-kit'
 export async function panda(){
-    try{
+  
         const safeAuthKit = await SafeAuthKit.init(SafeAuthProviderType.Web3Auth, {
             chainId: '0x5',
             authProviderConfig: {
@@ -14,9 +14,7 @@ export async function panda(){
             }
         })
         await safeAuthKit?.signIn();
-    }catch(e){
-        console.log(e.message)
-    }
+    
 
 }
 export default component$(() => {
