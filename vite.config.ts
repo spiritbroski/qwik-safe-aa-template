@@ -79,6 +79,9 @@ export default defineConfig(() => {
                 rollupNodePolyFill(),
                 ],
           },
-      }
+      },
+      define: {
+        'process.env': {}
+    }
   };
 });
