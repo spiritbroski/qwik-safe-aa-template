@@ -1,6 +1,6 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { MUIButton, MUISlider, TableApp } from '~/integrations/react/mui';
+import { MUIButton  } from '~/integrations/react/mui';
 import { SafeAuthKit, SafeAuthProviderType } from '@safe-global/auth-kit'
 export async function panda(){
     try{

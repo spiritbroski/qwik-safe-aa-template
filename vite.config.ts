@@ -46,11 +46,12 @@ export default defineConfig(() => {
             domain: "rollup-plugin-node-polyfills/polyfills/domain",
             "node:buffer": "rollup-plugin-node-polyfills/polyfills/buffer-es6",
             process: "rollup-plugin-node-polyfills/polyfills/process-es6",
+            buffer: 'rollup-plugin-node-polyfills/polyfills/buffer-es6',
         },
       },
       optimizeDeps: {
         include:['node-domexception'],
-        disabled: false,
+
           esbuildOptions: {
             target: "es2020",
               supported: { bigint: true },
@@ -65,6 +66,17 @@ export default defineConfig(() => {
                 NodeModulesPolyfillPlugin()
             ]
         }
+      },
+      build: {
+        target: "es2020",
+          rollupOptions: {
+            plugins: [
+                // Enable rollup polyfills plugin
+                // used during production bundling
+                builtins(),
+                rollupNodePolyFill(),
+                ],
+          },
       },
   };
 });
