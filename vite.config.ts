@@ -19,8 +19,8 @@ export default defineConfig(() => {
         alias: {
             "node:stream":"stream-browserify",
             "node:util": "util",
-            util:"util",
-            sys: "util",
+            util:"rollup-plugin-node-polyfills/polyfills/util",
+            sys: "rollup-plugin-node-polyfills/polyfills/util",
             events: "rollup-plugin-node-polyfills/polyfills/events",
             stream: "rollup-plugin-node-polyfills/polyfills/stream",
             "node:path": "rollup-plugin-node-polyfills/polyfills/path",
