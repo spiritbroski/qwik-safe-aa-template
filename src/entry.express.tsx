@@ -14,7 +14,7 @@ import render from './entry.ssr';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
-
+import cors from 'cors'
 declare global {
   interface QwikCityPlatform extends PlatformNode {}
 }
