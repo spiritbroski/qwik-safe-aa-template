@@ -7,9 +7,11 @@ import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfil
 import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill'
 import rollupNodePolyFill from "rollup-plugin-node-polyfills";
 import builtins from "rollup-plugin-node-builtins";
+
+
 export default defineConfig(() => {
   return {
-    plugins: [qwikCity(), qwikVite(), tsconfigPaths(), qwikReact()],
+      plugins: [qwikCity(), qwikVite(), tsconfigPaths(), qwikReact()],
     preview: {
       headers: {
         "Cache-Control": "public, max-age=600",
@@ -18,16 +20,16 @@ export default defineConfig(() => {
       resolve: {
         alias: {
             "node:stream":"stream-browserify",
-            "node:util": "util",
-            util:"rollup-plugin-node-polyfills/polyfills/util",
+              "node:util": "util",
+               util:"rollup-plugin-node-polyfills/polyfills/util",
             sys: "rollup-plugin-node-polyfills/polyfills/util",
             events: "rollup-plugin-node-polyfills/polyfills/events",
-            stream: "rollup-plugin-node-polyfills/polyfills/stream",
+                   path:"path",
             "node:path": "rollup-plugin-node-polyfills/polyfills/path",
             querystring: "rollup-plugin-node-polyfills/polyfills/qs",
             punycode: "rollup-plugin-node-polyfills/polyfills/punycode",
             "node:url": "rollup-plugin-node-polyfills/polyfills/url",
-            url: "rollup-plugin-node-polyfills/polyfills/url",
+            url: "url",
             "node:http": "rollup-plugin-node-polyfills/polyfills/http",
             "node:net":"net-websocket-polyfill",
             "node:fs":"memfs",
@@ -35,11 +37,7 @@ export default defineConfig(() => {
             os: "rollup-plugin-node-polyfills/polyfills/os",
             assert: "rollup-plugin-node-polyfills/polyfills/assert",
             constants: "rollup-plugin-node-polyfills/polyfills/constants",
-            _stream_duplex: "rollup-plugin-node-polyfills/polyfills/readable-stream/duplex",
-            _stream_passthrough: "rollup-plugin-node-polyfills/polyfills/readable-stream/passthrough",
-            _stream_readable: "rollup-plugin-node-polyfills/polyfills/readable-stream/readable",
-            _stream_writable: "rollup-plugin-node-polyfills/polyfills/readable-stream/writable",
-            _stream_transform: "rollup-plugin-node-polyfills/polyfills/readable-stream/transform",
+
             timers: "rollup-plugin-node-polyfills/polyfills/timers",
             console: "rollup-plugin-node-polyfills/polyfills/console",
             vm: "rollup-plugin-node-polyfills/polyfills/vm",
@@ -62,7 +60,7 @@ export default defineConfig(() => {
                 global: 'globalThis'
             },
               plugins: [
-                NodeGlobalsPolyfillPlugin({
+     NodeGlobalsPolyfillPlugin({
                     buffer: true,
                     process: true
                 }),
@@ -72,17 +70,23 @@ export default defineConfig(() => {
       },
       build: {
         target: "es2020",
+          commonjsOptions: {
+
+            transformMixedEsModules: true,
+          },
           rollupOptions: {
+          
             plugins: [
-                // Enable rollup polyfills plugin
-                // used during production bundling
+
                 builtins(),
-                rollupNodePolyFill(),
+                rollupNodePolyFill({crypto:true,}),
+
                 ],
           },
       },
       define: {
-        'process.env': {}
+        "process.env": process.env ?? {},
+
     }
   };
 });

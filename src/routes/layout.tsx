@@ -10,7 +10,7 @@ export const useServerTimeLoader = loader$(() => {
 });
 
 export default component$(() => {
-  const serverTime = useServerTimeLoader();
+
   return (
     <>
       <main>
@@ -19,12 +19,7 @@ export default component$(() => {
           <Slot />
         </section>
       </main>
-      <footer>
-        <a href="https://www.builder.io/" target="_blank">
-          Made with ♡ by Builder.io
-          <div>{serverTime.value.date}</div>
-        </a>
-      </footer>
+
     </>
   );
 });
