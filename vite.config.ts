@@ -7,11 +7,11 @@ import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfil
 import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill'
 import rollupNodePolyFill from "rollup-plugin-node-polyfills";
 import builtins from "rollup-plugin-node-builtins";
-
+import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig(() => {
   return {
-      plugins: [qwikCity(), qwikVite(), tsconfigPaths(), qwikReact()],
+      plugins: [qwikCity(), qwikVite(), tsconfigPaths(), qwikReact(),viteCompression()],
     preview: {
       headers: {
         "Cache-Control": "public, max-age=600",
@@ -20,16 +20,16 @@ export default defineConfig(() => {
       resolve: {
         alias: {
             "node:stream":"stream-browserify",
-            stream: 'rollup-plugin-node-polyfills/polyfills/stream',
+            stream:"rollup-plugin-node-polyfills/polyfills/stream",
               "node:util": "util",
                util:"rollup-plugin-node-polyfills/polyfills/util",
             sys: "rollup-plugin-node-polyfills/polyfills/util",
             events: "rollup-plugin-node-polyfills/polyfills/events",
                    path:"path",
-            "node:path": "rollup-plugin-node-polyfills/polyfills/path",
+            "node:path": "path",
             querystring: "rollup-plugin-node-polyfills/polyfills/qs",
             punycode: "rollup-plugin-node-polyfills/polyfills/punycode",
-            "node:url": "rollup-plugin-node-polyfills/polyfills/url",
+            "node:url": "url",
             url: "rollup-plugin-node-polyfills/polyfills/url",
             "node:http": "rollup-plugin-node-polyfills/polyfills/http",
             "node:net":"net-websocket-polyfill",

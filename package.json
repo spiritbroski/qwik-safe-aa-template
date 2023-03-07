@@ -67,6 +67,7 @@
     "undici": "5.20.0",
     "util": "^0.12.5",
     "vite": "4.1.4",
+    "vite-plugin-compression": "^0.5.1",
     "vite-plugin-external": "^1.2.8",
     "vite-plugin-ngmi-polyfill": "^0.0.2",
     "vite-tsconfig-paths": "3.5.0",
