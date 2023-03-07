@@ -9,9 +9,9 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
+    "build.server": "vite build -c adapters/express/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "deploy": "wrangler pages dev ./dist",
+    "deploy": "node server/entry.express",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
@@ -66,12 +66,11 @@
     "typescript": "4.9.5",
     "undici": "5.20.0",
     "util": "^0.12.5",
+    "vercel": "^28.4.17",
     "vite": "4.1.4",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-external": "^1.2.8",
-    "vite-plugin-ngmi-polyfill": "^0.0.2",
     "vite-tsconfig-paths": "3.5.0",
     "wrangler": "latest"
-  },
-  "dependencies": {}
+  }
 }

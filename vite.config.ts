@@ -20,9 +20,9 @@ export default defineConfig(() => {
       resolve: {
         alias: {
             "node:stream":"stream-browserify",
-            stream:"rollup-plugin-node-polyfills/polyfills/stream",
+//            stream:"rollup-plugin-node-polyfills/polyfills/stream",
               "node:util": "util",
-               util:"rollup-plugin-node-polyfills/polyfills/util",
+            util:"rollup-plugin-node-polyfills/polyfills/util",
             sys: "rollup-plugin-node-polyfills/polyfills/util",
             events: "rollup-plugin-node-polyfills/polyfills/events",
                    path:"path",
@@ -30,7 +30,7 @@ export default defineConfig(() => {
             querystring: "rollup-plugin-node-polyfills/polyfills/qs",
             punycode: "rollup-plugin-node-polyfills/polyfills/punycode",
             "node:url": "url",
-            url: "rollup-plugin-node-polyfills/polyfills/url",
+            url: "url",
             "node:http": "rollup-plugin-node-polyfills/polyfills/http",
             "node:net":"net-websocket-polyfill",
             "node:fs":"memfs",
