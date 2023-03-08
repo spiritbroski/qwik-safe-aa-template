@@ -11,7 +11,7 @@ import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig(() => {
     return {
-        server:{host:"0.0.0.0"},
+    ssr:{target:"webworker"},
       plugins: [qwikCity(), qwikVite(), tsconfigPaths(), qwikReact(),viteCompression()],
     preview: {
       headers: {
