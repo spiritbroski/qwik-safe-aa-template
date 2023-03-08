@@ -11,7 +11,7 @@ import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig(() => {
     return {
-    ssr:{target:"webworker"},
+
       plugins: [qwikCity(), qwikVite(), tsconfigPaths(), qwikReact(),viteCompression()],
     preview: {
       headers: {
@@ -21,8 +21,8 @@ export default defineConfig(() => {
       resolve: {
         alias: {
             "node:stream":"stream-browserify",
-            stream:"rollup-plugin-node-polyfills/polyfills/stream",
-              "node:util": "util",
+//            stream:"rollup-plugin-node-polyfills/polyfills/stream",
+            "node:util": "rollup-plugin-node-polyfills/polyfills/util",
             util:"rollup-plugin-node-polyfills/polyfills/util",
             sys: "rollup-plugin-node-polyfills/polyfills/util",
             events: "rollup-plugin-node-polyfills/polyfills/events",
@@ -31,7 +31,7 @@ export default defineConfig(() => {
             querystring: "rollup-plugin-node-polyfills/polyfills/qs",
             punycode: "rollup-plugin-node-polyfills/polyfills/punycode",
             "node:url": "url",
-            url: "url",
+            url: "rollup-plugin-node-polyfills/polyfills/url",
             "node:http": "rollup-plugin-node-polyfills/polyfills/http",
             "node:net":"net-websocket-polyfill",
             "node:fs":"memfs",
@@ -77,7 +77,7 @@ export default defineConfig(() => {
             transformMixedEsModules: true,
           },
           rollupOptions: {
-          
+           
             plugins: [
 
                 builtins(),
