@@ -10,7 +10,8 @@ import builtins from "rollup-plugin-node-builtins";
 import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig(() => {
-  return {
+    return {
+        server:{host:"0.0.0.0"},
       plugins: [qwikCity(), qwikVite(), tsconfigPaths(), qwikReact(),viteCompression()],
     preview: {
       headers: {
