@@ -10,7 +10,7 @@ export const useAddUser = action$(() => {
         success: true
     };
 });
-export const onRequest:RequestHandler = ({ headers, query,method,json,status }) => {
+export const onRequest:RequestHandler = ({ headers, method,status }) => {
     headers.set('Access-Control-Allow-Credentials', "true")
     headers.set('Access-Control-Allow-Origin', '*')
     headers.set('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
