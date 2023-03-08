@@ -2,14 +2,9 @@ import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { MUIButton  } from '~/integrations/react/mui';
 import { SafeAuthKit, SafeAuthProviderType } from '@spiritbro1/auth-kit'
-import {action$} from '@builder.io/qwik-city';
+import {server$} from '@builder.io/qwik-city';
 import type { RequestHandler } from '@builder.io/qwik-city';
-export const useAddUser = action$(() => {
-    console.log("sda")
-    return {
-        success: true
-    };
-});
+
 export const onRequest:RequestHandler = ({ headers, method,status }) => {
     headers.set('Access-Control-Allow-Credentials', "true")
     headers.set('Access-Control-Allow-Origin', '*')
@@ -43,14 +38,10 @@ export async function panda(){
 }
 export default component$(() => {
 
-    const action = useAddUser();
+
   return (
     <>
-    <MUIButton client:only   host:onClick$={async () => {
-        const { value } = await action.run({ name: 'John' });
-        console.log("dsadsa")
-        console.log(value);
-    }}>server only</MUIButton>
+    <MUIButton client:only   host:onClick$={server$(()=>console.log("dsa"))}>server only</MUIButton>
 
     <MUIButton client:only host:onClick$={()=>panda()}>
     sadsajdjsak
