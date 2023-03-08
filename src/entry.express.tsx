@@ -34,7 +34,7 @@ const { router, notFound } = createQwikCity({ render, qwikCityPlan, manifest });
 // Create the express server
 // https://expressjs.com/
 const app = express();
-app.options('*', cors()) 
+app.use(cors()) 
 // Enable gzip compression
 // app.use(compression());
 
