@@ -10,6 +10,6 @@ export default extendConfig(baseConfig, () => {
         input: ['src/entry.express.tsx', '@qwik-city-plan'],
       },
     },
-    plugins: [expressAdapter()],
+      plugins: [expressAdapter({ssg:{include:[],origin:"http://percobaanqwik.hop.sh"}})],
   };
 });

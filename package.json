@@ -7,9 +7,9 @@
   "private": true,
   "scripts": {
     "build": "qwik build",
-      "build.client": "URL=https://percobaanqwik.hop.sh vite build",
-      "build.preview": "URL=https://percobaanqwik.hop.sh vite build --ssr src/entry.preview.tsx",
-      "build.server": "URL=https://percobaanqwik.hop.sh vite build -c adapters/express/vite.config.ts",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/express/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "deploy": "node server/entry.express",
     "dev": "vite --mode ssr",
@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@builder.io/qwik": "latest",
-    "@builder.io/qwik-city": "latest",
     "@builder.io/qwik-react": "latest",
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
@@ -74,6 +73,7 @@
     "wrangler": "latest"
   },
   "dependencies": {
+    "@builder.io/qwik-city": "https://github.com/spiritupbro/qwik-city",
     "cors": "^2.8.5"
   }
 }
