@@ -29,7 +29,7 @@ export default defineConfig(() => {
             "node:path": "path",
             querystring: "rollup-plugin-node-polyfills/polyfills/qs",
             punycode: "rollup-plugin-node-polyfills/polyfills/punycode",
-            "node:url": "url[",
+            "node:url": "url",
             url: "url",
             "node:http": "rollup-plugin-node-polyfills/polyfills/http",
             "node:net":"net-websocket-polyfill",
