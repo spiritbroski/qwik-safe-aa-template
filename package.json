@@ -7,9 +7,9 @@
   "private": true,
   "scripts": {
     "build": "qwik build",
-    "build.client": "vite build",
-    "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "vite build -c adapters/express/vite.config.ts",
+      "build.client": "URL=https://percobaanqwik.hop.sh vite build",
+      "build.preview": "URL=https://percobaanqwik.hop.sh vite build --ssr src/entry.preview.tsx",
+      "build.server": "URL=https://percobaanqwik.hop.sh vite build -c adapters/express/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "deploy": "node server/entry.express",
     "dev": "vite --mode ssr",
