@@ -22,9 +22,9 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.20.1",
-    "@builder.io/qwik-city": "0.5.2",
-    "@builder.io/qwik-react": "0.4.2",
+    "@builder.io/qwik": "latest",
+    "@builder.io/qwik-city": "latest",
+    "@builder.io/qwik-react": "latest",
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
